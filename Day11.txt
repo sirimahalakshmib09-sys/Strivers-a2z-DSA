@@ -1,0 +1,26 @@
+//Print N to 1 using recursion
+class Solution {
+    public void printNumbers(int current) {
+        // Your code goes here
+        if(current<1)
+        return ;
+        System.out.println(current);
+        printNumbers(current-1);
+
+    }
+}
+
+//using backtracking
+class Solution {
+    public void printNumbers(int n) {
+        // Your code goes here
+        backtrack(1,n);
+    }
+    public void backtrack(int i,int n)
+    {
+        if(i>n)
+        return;
+        backtrack(i+1,n);
+        System.out.println(i);
+    }
+}

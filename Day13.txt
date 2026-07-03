@@ -1,0 +1,53 @@
+//Factorial of a number using recursion
+class Solution {
+    // Function to calculate factorial of a number.
+    int factorial(int n) {
+        // code here
+        if(n<1)
+        return 1;
+        return n*factorial(n-1);
+    }
+}
+
+//Reverse an array : Better approach
+class Solution {
+    public void reverseArray(int arr[]) {
+        // code here
+       int left=0,right=arr.length-1;
+       while(left<right)
+       {
+           int temp=arr[left];
+           arr[left]=arr[right];
+           arr[right]=temp;
+           left++;
+           right--;
+       }
+    }
+}
+//Time Complexity:O(N)
+//Space Complexity:O(1)
+
+//recursive approach
+class Solution {
+    public boolean isPalindrome(String s) {
+        String cleaned = s.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
+      return same(0,cleaned);
+    }
+    public boolean same(int i,String cleaned)
+    {
+        if(i>=cleaned.length()/2)
+        return true;
+        if(cleaned.charAt(i)!=cleaned.charAt(cleaned.length()-i-1))
+        return false;
+        return same(i+1,cleaned);
+    }
+}
+
+//fibonacci series using recursion
+class Solution {
+    public int fib(int n) {
+        if(n==0 || n==1)
+        return 1;
+        return fib(n-1)+fib(n-2);
+    }
+}

@@ -1,0 +1,43 @@
+//Counting Frequencies of Array Elements
+//brute force approach
+class Solution {
+    public List<List<Integer>> countFrequencies(int[] nums) {
+        // Your code goes here
+        boolean visited[]=new boolean[nums.length];
+        List<List<Integer>>res=new ArrayList<>();
+        for(int i=0;i<nums.length;i++)
+        {
+            int cnt=1;
+            if(visited[i]==true)
+            continue;
+            for(int j=i+1;j<nums.length;j++)
+            {
+                if(nums[i]==nums[j])
+                {
+                visited[j]=true;
+                cnt++;
+                }
+            }
+            res.add(Arrays.asList(nums[i],cnt));
+        }
+        return res;
+    }
+}
+
+//optimal approach 
+class Solution {
+    public List<List<Integer>> countFrequencies(int[] nums) {
+        // Your code goes here
+        HashMap<Integer,Integer> map=new HashMap<>();
+        List<List<Integer>> res=new ArrayList<>();
+        for(int i=0;i<nums.length;i++)
+        {
+            map.put(nums[i],map.getOrDefault(nums[i],0)+1);
+        }
+        for(Map.Entry<Integer,Integer> entry:map.entrySet())
+        {
+            res.add(Arrays.asList(entry.getKey(),entry.getValue()));
+        }
+        return res;
+    }
+}
