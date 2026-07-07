@@ -38,3 +38,26 @@ class Solution {
         return (second_large==Integer.MIN_VALUE)?-1:second_large;
     }
 }
+
+//Check if Array is sorted and rotated
+//Time complexity-O(N)
+//Space complexity-O(1)
+class Solution {
+    public boolean check(int[] nums) {
+        if(nums.length<=2)
+        return true;
+        int inversioncount=0;
+        for(int i=0;i<nums.length-1;i++)
+        {
+            if(nums[i]>nums[i+1])
+            {
+                inversioncount++;
+            if(inversioncount>1)
+            return false;
+            }
+        }
+            if(nums[0]<nums[nums.length-1])
+            inversioncount++;
+        return inversioncount<=1;
+    }
+}
