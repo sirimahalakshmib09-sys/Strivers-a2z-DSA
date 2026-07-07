@@ -13,3 +13,28 @@ class Solution {
     return max;
     }
 }
+
+//Second Largest Element
+//Time Complexity-O(N)
+//Space Complexity-O(1)
+class Solution {
+    public int secondLargestElement(int[] nums) {
+      if(nums.length<2)
+      return -1;
+       int first_large=Integer.MIN_VALUE;
+        int second_large=Integer.MIN_VALUE;
+      for(int i=0;i<nums.length;i++)
+      {
+        if(nums[i]>first_large)
+        {
+            second_large=first_large;
+            first_large=nums[i];
+        }
+        else if(nums[i]>second_large && nums[i]!=first_large)
+        {
+            second_large=nums[i];
+        }
+      }
+        return (second_large==Integer.MIN_VALUE)?-1:second_large;
+    }
+}
