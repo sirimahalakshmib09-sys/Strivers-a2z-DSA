@@ -18,3 +18,22 @@ class Solution {
         return index;
     }
 }
+
+//Remove Duplicates from sorted array
+//Optimal approach
+//Time Complexity-O(N)
+//Space Complexity-O(1)
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int i=0;
+        for(int j=0;j<nums.length;j++)
+        {
+            if(nums[i]!=nums[j])
+            {
+             nums[i+1]=nums[j];
+            i++;
+            }
+        }
+        return i+1;
+    }
+}
