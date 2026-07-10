@@ -181,3 +181,23 @@ class Solution {
         return max;
     }
 }
+
+//Single Number
+//Brute Force approach
+//Time Complexity-O(N)
+//Space Complexity-O(N)
+class Solution {
+    public int singleNumber(int[] nums) {
+        HashMap<Integer,Integer> map=new HashMap<>();
+        for(int num:nums)
+        {
+            map.put(num,map.getOrDefault(num,0)+1);
+        }
+        for(Map.Entry<Integer,Integer> entry:map.entrySet())
+        {
+            if(entry.getValue()==1)
+            return entry.getKey();
+        }
+        return -1;
+    }
+}
