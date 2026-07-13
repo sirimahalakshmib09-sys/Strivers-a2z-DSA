@@ -60,3 +60,32 @@ class Solution {
         return max;
     }
 }
+
+//Longest subarray with sum k
+//Optimal code 
+//Time Complexity-O(n)
+//Space Complexity-O(1)
+class Solution {
+    public int longestSubarray(int[] arr, int k) {
+        // code here
+        int sum=arr[0],max=0,i=0,j=0;
+        while(j<arr.length)
+        {
+            while(sum>k && i<=j)
+            {
+                sum-=arr[i];
+                i++;
+            }
+            if(sum==k)
+            {
+                max=Math.max(max,j-i+1);
+            }
+                 j++;
+            if(j<arr.length)
+            {
+                sum+=arr[j];
+            }
+        }
+        return max;
+    }
+}
