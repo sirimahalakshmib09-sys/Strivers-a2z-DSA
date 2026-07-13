@@ -35,3 +35,28 @@ class Solution {
         return j;
     }
 }
+
+//Longest subarray with sum k
+//Time Complexity-O(n*n)
+//Space Complexity-O(1)
+class Solution {
+    public int longestSubarray(int[] arr, int k) {
+        // code here
+        int max=0;
+        for(int i=0;i<=arr.length-1;i++)
+        {
+             int sum=0,j=i;
+            while(j<=arr.length-1)
+            {
+               sum+=arr[j];
+               j++;
+                if(sum==k)
+            {
+            int  size=j-i;
+            max=Math.max(max,size);
+            }
+            }
+        }
+        return max;
+    }
+}
