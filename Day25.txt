@@ -64,6 +64,7 @@ class Solution {
          {
             arr[0]=i;
             arr[1]=map.get(rem);
+            return arr;
          }
          else
          {
