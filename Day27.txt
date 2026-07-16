@@ -1,0 +1,9 @@
+//Sort an array of 0s,1s and 2s
+//Brute force approach
+//Time Complexity-O(nlogn)-arrays.sort() uses dual-pivot quicksort algorithm 
+//Space Complexity-O(logn)-auxiliary space for recursive stack
+class Solution {
+    public void sortColors(int[] nums) {
+        Arrays.sort(nums);
+    }
+}
