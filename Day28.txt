@@ -1,0 +1,28 @@
+//Majority Element
+//Brute Force Approach
+//Time Complexity-O(nlogn+n)=O(nlogn)
+//Space Complexity-O(logn)
+class Solution {
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        int i=0,count=1,j=i+1,ele=0,max=0;
+        if(nums.length==1) return nums[0];
+        while(i<nums.length-1)
+        {
+            j=i+1;
+            count=1;
+            while(j<nums.length && nums[i]==nums[j])
+            {
+                count++;
+                j++;
+            }
+            if(count>max)
+            {
+                max=count;
+                ele=nums[i];
+            }
+            i=j;
+        }
+        return ele;
+    }
+}
