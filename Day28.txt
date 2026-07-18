@@ -181,3 +181,19 @@ class Solution {
         return maxprofit;
     }
 }
+
+//Stock Buy and Sell
+//BOptimal approach
+//Time Complexity-O(n)
+//Space Complexity-O(1)
+class Solution {
+    public int maxProfit(int[] nums) {
+        int profit=0,minprice=Integer.MAX_VALUE;
+        for(int i=1;i<nums.length;i++)
+        {
+          minprice=Math.min(minprice,nums[i-1]);
+          profit=Math.max(profit,nums[i]-minprice);
+        }
+        return profit;
+    }
+}
