@@ -78,3 +78,31 @@ public class Main {
         System.out.println();
     }
 }
+
+//Leader in an array
+//Brute Force approach
+//Time Complexity-O(n*n)
+//Space Complexity-O(n)
+class Solution {
+    static ArrayList<Integer> leaders(int arr[]) {
+        // code here
+        ArrayList<Integer> leader=new ArrayList<>();
+        for(int i=0;i<arr.length-1;i++)
+        {
+             boolean found=true;
+            for(int j=i+1;j<arr.length;j++)
+            {
+                if(arr[i]<arr[j])
+                {
+                    found=false;
+                }
+            }
+            if(found)
+            leader.add(arr[i]);
+        }
+        leader.add(arr[arr.length-1]);
+        
+        return leader;
+    }
+}
+
