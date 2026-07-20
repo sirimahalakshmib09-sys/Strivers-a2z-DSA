@@ -106,3 +106,17 @@ class Solution {
     }
 }
 
+//Check if the i-th bit is Set or Not
+//Optimal approach 
+//Time Complexity-O(1)
+//Space Complexity-O(1)
+class Solution {
+    public boolean checkIthBit(int n, int i) {
+        // Your code goes here
+        int x= (1<<(i));
+        if((n&x)!=0)
+        return true;
+        else
+        return false;
+    }
+}
