@@ -120,3 +120,13 @@ class Solution {
         return false;
     }
 }
+
+//Check if a number is odd or even using bit manipulation
+//Time Complexity-O(1)
+//Space Comples-O(1)
+class Solution {
+    public boolean isOdd(int n) {
+        // Your code goes here
+        return true ? ((n&1)!=0) : false;
+    }
+}
