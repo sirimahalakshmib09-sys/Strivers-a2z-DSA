@@ -130,3 +130,25 @@ class Solution {
         return true ? ((n&1)!=0) : false;
     }
 }
+//Leader in an array
+//Optimal approach
+//Time Complexity-O(n)
+//Space Complexity-O(n)
+class Solution {
+    static ArrayList<Integer> leaders(int arr[]) {
+        // code here
+        ArrayList<Integer> leader=new ArrayList<>();
+       int max=arr[arr.length-1];
+       leader.add(arr[arr.length-1]);
+       for(int i=arr.length-2;i>=0;i--)
+       {
+          if(arr[i]>=max)
+          {
+              leader.add(arr[i]);
+              max=arr[i];
+          }
+       }
+       java.util.Collections.reverse(leader);
+       return leader;
+    }
+}
