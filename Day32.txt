@@ -58,3 +58,43 @@ class Solution {
         return maxlen;
     }
 }
+
+
+// Set Matrix Zeroes
+// Brute Force Approach (Fixed placeholder)
+// Time Complexity: O((m*n)*(m+n) + (m*n))
+// Space Complexity: O(1)
+class Solution {
+    public void setZeroes(int[][] matrix) {
+        int row = matrix.length;
+        int col = matrix[0].length;
+        
+        // Marker value that won't collide with matrix inputs
+        int MARKER = -999999; 
+
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (matrix[i][j] == 0) {
+                    for (int c = 0; c < col; c++) {
+                        if (matrix[i][c] != 0) {
+                            matrix[i][c] = MARKER;
+                        }
+                    }
+                    for (int c = 0; c < row; c++) {
+                        if (matrix[c][j] != 0) {
+                            matrix[c][j] = MARKER;
+                        }
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (matrix[i][j] == MARKER) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+    }
+}
