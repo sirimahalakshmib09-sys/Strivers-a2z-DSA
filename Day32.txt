@@ -1,0 +1,33 @@
+//Longest Consecutive Sequence
+//Brute Force Approach
+//Time Complexity-O(n*n)
+//Space Complexity-O(1)
+class Solution {
+    public int longestConsecutive(int[] nums) {
+         if (nums.length == 0) {
+            return 0;
+        }
+        int maxlen=1;
+        for(int i=0;i<nums.length;i++)
+        {
+            int x=nums[i];
+            int len=1;
+            while(linearSearch(nums,x+1)==true)
+            {
+                x=x+1;
+                len++;
+            }
+            maxlen=Math.max(len,maxlen);
+        }
+        return maxlen;
+    }
+    public boolean linearSearch(int nums[],int target)
+    {
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]==target)
+            return true;
+        }
+        return false;
+    }
+}
